@@ -8,7 +8,7 @@ export default function Sidebar() {
 
   return (
     <aside className='md:w-72'>
-        <div className='p-4'>
+        <div className='p-4 sm:items-center sm:flex'>
             <img
                 className='w-40'
                 src='img/logo.svg'
