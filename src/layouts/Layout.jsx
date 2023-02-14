@@ -22,7 +22,6 @@ Modal.setAppElement('#root')
 export default function Layout(){
 
     const { modal } = useProductos();
-    const { handleClickModal } = useProductos();
 
     console.log(modal);
 

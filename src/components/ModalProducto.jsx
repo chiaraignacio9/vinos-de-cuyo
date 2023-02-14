@@ -6,9 +6,15 @@ export default function ModalProducto() {
 
     const { producto, handleClickModal, handleAgregarPedido, pedido } = useProductos();
     const [cantidad, setCantidad] = useState(1);
+    const [edicion, setEdicion] = useState(false);
 
     useEffect(() => {
-        
+        if(pedido.some( pedidoState => pedidoState.id === producto.id )){
+            const productoEdicion = pedido.filter(pedidoState => pedidoState.id === producto.id)[0]
+
+            setCantidad(productoEdicion.cantidad)
+            setEdicion(true)
+        }
     }, [pedido])
 
     return (
@@ -70,7 +76,7 @@ export default function ModalProducto() {
                         handleAgregarPedido({...producto, cantidad})
                         handleClickModal()
                     }}
-            >Añadir al Pedido
+            >{edicion ? 'Guardar Cambios' : 'Añadir al Pedido'}
 
             </button>
         </div>
