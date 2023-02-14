@@ -1,9 +1,12 @@
 import { Outlet } from 'react-router-dom'
 import Modal from 'react-modal'
+import { ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 import Sidebar from '../components/Sidebar'
 import Resumen from '../components/Resumen'
 import useProductos from '../hooks/useProductos'
 import ModalProducto from '../components/ModalProducto'
+
 
 const customStyles = {
     content: {
@@ -22,12 +25,13 @@ Modal.setAppElement('#root')
 export default function Layout(){
 
     const { modal } = useProductos();
+    const { handleClickModal } = useProductos();
 
     console.log(modal);
 
     return (
         <>
-            <div className='md:flex'>
+            <div className='md:flex '>
                 <Sidebar />
 
                 <main className='flex-1 h-screen overflow-y-scroll bg-gray-50 p-3'>
@@ -43,6 +47,8 @@ export default function Layout(){
             <Modal isOpen={modal} style={customStyles}>
                 <ModalProducto />
             </Modal>
+
+            <ToastContainer />
         </>
     )
 }

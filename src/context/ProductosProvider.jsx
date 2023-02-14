@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react'
+import { toast } from 'react-toastify';
 import { categorias as CategoriasDB} from "../data/Categorias"
 
 const ProductosContext = createContext();
@@ -31,7 +32,17 @@ const ProductosProvider = ({children}) =>{
     }
 
     const handleAgregarPedido = ({categoria_id, imagen, ...producto}) => {
-        setPedido([...pedido, producto])
+        
+
+        if(pedido.some( pedidoState => pedidoState.id === producto.id )){
+            const pedidoActualizado = pedido.map(pedidoState => 
+                pedidoState.id === producto.id ? producto : pedidoState)
+                setPedido(pedidoActualizado)
+                toast.success('Pedido actualizado')
+        }else{
+            setPedido([...pedido, producto])
+            toast.success('Agregado al pedido')
+        }
     }
 
     return (

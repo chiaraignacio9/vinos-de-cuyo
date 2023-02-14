@@ -16,7 +16,7 @@ export default function Categoria({categoria}) {
             <img
                 alt="Imagen categoria"
                 src={`/img/icono_${icono}.svg`}
-                className="w-12 rotate-45"
+                className="w-10 rotate-45"
             />
 
             <button 
