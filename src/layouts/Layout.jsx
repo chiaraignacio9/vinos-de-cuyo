@@ -34,12 +34,14 @@ export default function Layout(){
             <div className='md:flex '>
                 <Sidebar />
 
-                <main className='flex-1 h-screen overflow-y-scroll bg-gray-50 p-3'>
+                <main id='productos' className='flex-1 h-screen overflow-y-scroll bg-gray-50 p-3'>
                     <Outlet />
                 </main>
             
-
-                <Resumen />
+                <div id="resumen">
+                    <Resumen/>
+                </div>
+                
 
             </div>
 

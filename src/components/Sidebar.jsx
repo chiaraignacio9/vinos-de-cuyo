@@ -7,8 +7,8 @@ export default function Sidebar() {
     const { categorias } = useProductos()
 
   return (
-    <aside className='md:w-72'>
-        <div className='p-4'>
+    <aside className='md:w-72 content-center'>
+        <div className='p-4 content-center'>
             <img
                 className='w-40'
                 src='img/logo.svg'
@@ -27,9 +27,9 @@ export default function Sidebar() {
         <div className="my-5 px-5">
             <button
                 type="button"
-                className="text-center bg-red-500 w-full p-3 font-bold text-white truncate"
+                className="text-center bg-blue-500 w-full p-3 font-bold text-white truncate"
             >
-                Cancelar Orden
+                <a href="#resumen">Ver Pedido</a>
             </button>
         </div>
 

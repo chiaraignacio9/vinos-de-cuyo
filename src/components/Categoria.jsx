@@ -24,7 +24,7 @@ export default function Categoria({categoria}) {
                 type="button"
                 onClick={ () => handleClickCategoria(id)}
             >
-                {nombre}
+                <a href="#productos">{nombre}</a>
             </button>
         </div>
   )
