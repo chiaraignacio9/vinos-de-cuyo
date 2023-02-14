@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react'
-import { categorias as CategoriasDB} from "../data/categorias"
+import { categorias as CategoriasDB} from "../data/Categorias"
 
 const ProductosContext = createContext();
 
